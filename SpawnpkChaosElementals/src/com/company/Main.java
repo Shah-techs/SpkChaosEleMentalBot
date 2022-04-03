@@ -25,11 +25,24 @@ public class Main {
 	    * check for guard*/
 
         //Cordinates
-	    int HealthX = 726;
-	    int HealthY = 40;
+	    int HealthX = 731;
+	    int HealthY = 187;
 
-	    int SpawnerX = 182;
-	    int SpawnerY = 212;
+			//health coordinates for my screen
+			//731x
+			//187 y
+
+	    int SpawnerX = 213;
+	    int SpawnerY = 165;
+
+			//spawner coordinates for my screen
+			//213 x
+			//165 y
+
+
+		int spawnChaosEleX = 127;
+		int spawnChaosEleY = 265;
+
 	   // Color color = Color.decode("41371E");
 
 
@@ -43,13 +56,14 @@ public class Main {
 
 		while(true){
 			robot.delay(15000);
-			klick(253, 264);   //Hover OverSpawner
+			click(SpawnerX, SpawnerY);   //Hover OverSpawner
 			robot.delay(5000);
-			klick(121, 350);  // Klick spawn clouse by
+			click(spawnChaosEleX, spawnChaosEleY);  // Click spawn close by
 			robot.delay(60000);
-			klick(731, 273);  // Health
+			click(HealthX, HealthY);  // Health
 			robot.delay(60000);
 			robot.delay(10000);
+
 
 			/*
 			robot.mouseMove(253, 328);
@@ -62,15 +76,19 @@ public class Main {
 			}
 
 			 */
-
-
 		}
 
+		// stop();
+
     }
-    public static void klick(int x, int y){
+    public static void click(int x, int y){
 		robot.mouseMove(x, y);
 		robot.delay(1000);
 		robot.mousePress(MouseEvent.BUTTON1_MASK);
 		robot.mouseRelease(MouseEvent.BUTTON1_MASK);
 	}
+
+//	public static void stop(){
+//		exit();
+//	}
 }
